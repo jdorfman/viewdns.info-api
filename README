@@ -2,6 +2,7 @@ This awesome site called: http://viewdns.info/ has a bunch of DNS tools.  They a
 
 I plan on writting a full BASH and Python script that will allow you to run every available tool from a terminal.
 
+rename conf-sample to conf
 run: bash viewdns.bash
 
 More to come. Needed to push it to github before I left for the day.
