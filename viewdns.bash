@@ -15,7 +15,7 @@ echo "$QDOMAIN"
 }
 
 echo "What tool do you want to run?"
-echo -e "Propagation[p]\nChinese Firewall Test [c]\n"
+echo -e "\nPropagation [p]\nChinese Firewall Test [c]\nRecord Lookup [r]\nPort Scanner [ps]"
 read tool
 
 if [ $tool == 'propagation' ] || [ $tool == 'p' ]; then
@@ -25,4 +25,13 @@ if [ $tool == 'propagation' ] || [ $tool == 'p' ]; then
 elif [ $tool == 'c' ]; then
 	input_domain
 		GET "http://pro.viewdns.info/chinesefirewall/?domain=$domain&apikey=$APIKEY&output=$output"
+
+elif [ $tool == 'record' ] || [ $tool == 'r' ]; then
+	input_domain
+		GET "http://pro.viewdns.info/dnsrecord/?domain=$domain&apikey=$APIKEY&output=$output"
+
+elif [ $tool == 'port scanner' ] || [ $tool == 'ps' ]; then
+	input_domain
+		GET "http://pro.viewdns.info/portscan/?host=$domain&apikey=$APIKEY&output=$output"
+
 fi
